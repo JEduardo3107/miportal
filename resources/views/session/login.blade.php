@@ -12,7 +12,7 @@
 @section('contenido')
 
     <div class="containerForm">
-        <form class="sessionForm" method="POST" action="{{ route('iniciarsesion.store') }}">
+        <form class="sessionForm" method="POST" action="{{ route('login.store') }}">
             @csrf
 
             <div class="unselectable logoContainer">
@@ -23,11 +23,16 @@
             </div>
 
             <div class="inputContainer">
+                @if(session('mensaje'))
+                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                    {{session('mensaje')}}
+                </p>
+            @endif
                 <label class="titleInput">
                     Correo electrónico
                 </label>
                 <div class="inputBox">
-                    <input type="text" class="noDefault inputArea">
+                    <input type="text" name="email" class="noDefault inputArea">
                 </div>
                {{-- <span class="errorMessage">
                     Los caracteres ingresados no coinciden con los indicados.
@@ -39,7 +44,7 @@
                     Contraseña
                 </label>
                 <div class="inputBox inputPassword">
-                    <input type="password" class="noDefault inputArea" id="showPasswordInput">
+                    <input type="password" class="noDefault inputArea" id="showPasswordInput" name="password">
                     <div class="showPasswordBtn">
                         <input type="button" value="Mostrar" id="showPasswordButton" class="noDefault cursorPointerEvent passwordButton btnFull">
                     </div>

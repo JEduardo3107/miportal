@@ -1,9 +1,19 @@
 @extends('template.structure')
 
-@section('titulo')
+@section('nombre')
     Tablero general
 @endsection
 
 @section('contenido')
-    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+
+
+
+    {{-- Lista de salones [Profesor] --}}
+
+    {{-- Lista de materias [Alumno] --}}
+
+
+
+
+
 @endsection

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\session\loginController;
+use App\Http\Controllers\dashboard\mainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +15,14 @@ use App\Http\Controllers\session\loginController;
 |
 */
 
-Route::get('/', function () {
-    return view('session.login');
+Route::controller(loginController::class)->group(function(){
+    Route::get('/iniciar-sesion', 'index')->name('login');
+    Route::post('/iniciar-sesion', 'store')->name('login.store');
 });
 
 
-Route::controller(loginController::class)->group(function(){
-    Route::get('/iniciar-sesion', 'index')->name('iniciarsesion');
-    Route::post('/iniciar-sesion', 'store')->name('iniciarsesion.store');
+Route::middleware('auth')->group(function(){
+	// raiz
+    Route::get('/', [mainController::class, 'index'])->name('home');
+
 });

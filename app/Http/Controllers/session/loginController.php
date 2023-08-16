@@ -14,7 +14,21 @@ class loginController extends Controller{
     }
 
     public function store(Request $request){
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
 
-        dd($request);
+        // valida si los datos son correctos, en caso de error, volver a la vista pero con un mensaje de error incluido
+        if(!auth()->attempt($request->only('email', 'password'), false)){
+            return back()->with('mensaje', 'credenciales incorrectas');
+        }
+
+        // redirecciona a la ruta en caso de exito
+        return redirect()->route('home');
     }
+
+
+
+
 }
