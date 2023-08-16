@@ -1,0 +1,31 @@
+/* botones */
+.btnFull{
+    width: 100%;
+}
+
+
+.normalButton{
+    box-sizing: border-box;
+    padding: .6em 1.2em;
+    text-align: center;
+    font-weight: bold;
+    background: #3a3a3a;
+    color: #fefefe;
+    border-radius: .2rem;
+}
+
+.normalButton:hover{
+    background: #126b9a;
+}
+
+.passwordButton{
+    height: 100%;
+    box-sizing: border-box;
+    padding: .2em;
+    text-align: center;
+    background: #3a3a3a;
+    color: #fefefe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

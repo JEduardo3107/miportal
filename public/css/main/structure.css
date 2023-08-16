@@ -1,0 +1,67 @@
+:root{
+    --maxWidthViewport: 1920px;
+
+    --backgroundColorOnSelection: #2c2c2c;
+    --textColorOnSelection: #fcfcfc;
+
+     /* Additional colors */
+     
+}
+
+/* Reset */
+html, body,
+img, label, span,
+div, p, strong, section
+h1, h2, h3, h4, h5{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Unselectable text */
+.unselectable{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+/* Select text */
+body::selection,
+input::selection, 
+*::selection{
+    background: var(--backgroundColorOnSelection);
+    color: var(--textColorOnSelection);
+}
+
+/* Select text - firefox */
+body::-moz-selection,
+input::-moz-selection, 
+*::selection{
+    background: var(--backgroundColorOnSelection);
+    color: var(--textColorOnSelection);
+}
+
+/* no default styles */
+.noDefault{
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Cursor pointer (event) */
+.cursorPointerEvent{
+    cursor: pointer;
+}
+/*
+.mainContainer{
+    width: 100%;
+
+}*/
